@@ -1,0 +1,43 @@
+---
+interface Props {
+    title: string;
+}
+
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import "../styles/global.css";
+
+const { title } = Astro.props;
+const ogImageURL = new URL("/assets/img/rob-kokochak-og-img.jpg", Astro.url);
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width"
+            ,
+            initial-scale="1"
+        />
+
+        <title>{title}</title>
+        <meta name="description" content="Rob Kokochak's website." />
+        <meta name="generator" content={Astro.generator} />
+        <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico" />
+
+        <meta property="og:title" content={title} />
+        <meta property="og:site_name" content="Rob Kokochak" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={Astro.url} />
+        <meta property="og:image" content={ogImageURL} />
+        <meta property="og:image:alt" content="Rob Kokochak's website." />
+        <meta property="og:locale" content="en" />
+        <meta property="og:description" content="Rob Kokochak's website." />
+    </head>
+    <body>
+        <Header />
+        <slot />
+        <Footer />
+    </body>
+</html>

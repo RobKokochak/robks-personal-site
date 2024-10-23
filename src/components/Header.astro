@@ -1,0 +1,26 @@
+---
+import GithubLink from "./GithubLink.astro";
+import LinkedInLink from "./LinkedInLink.astro";
+---
+
+<nav>
+  <p>
+    <a href="/">home</a>
+    <a href="/blog">blog</a>
+    <a href="/projects">projects</a>
+    <a href="/contact">contact</a>
+    <GithubLink />
+    <LinkedInLink />
+  </p>
+</nav>
+<style>
+  nav > p > :global(a) {
+    text-align: left;
+    margin-left: 20px;
+  }
+
+  nav {
+    margin-bottom: 4rem;
+    text-align: right;
+  }
+</style>
