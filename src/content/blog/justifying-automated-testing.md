@@ -1,6 +1,6 @@
 ---
-title: Stylesheet 2 - Electric Boogaloo
-pubDate: Jan 1 2020
+title: Justifying Automated Testing
+pubDate: Jan 1 2010
 ---
 
 # STYLESHEET
@@ -57,7 +57,7 @@ primarily written for testing the effect of <strong>user style sheets</strong>.
 You can use it for various other purposes as well, like just checking how
 your browser displays various HTML elements by default.
 It can also be useful when testing conversions from HTML
-format to other formats, since some elements can go wrong then.</p> 
+format to other formats, since some elements can go wrong then.</p>
 <p>This is another paragraph. I think it needs to be added that
 the set of elements tested is not exhaustive in any sense. I have selected
 those elements for which it can make sense to write user style sheet rules,
@@ -121,7 +121,7 @@ items are short, lists look better if they are compactly presented,
 </ol>
 
 <p>This is a paragraph before a <strong>definition</strong> list (<code>dl</code>).
-In principle, such a list should consist of <em>terms</em> and associated 
+In principle, such a list should consist of <em>terms</em> and associated
 definitions.
 But many authors use <code>dl</code> elements for fancy "layout" things. Usually the
 effect is not <em>too</em> bad, if you design user style sheet rules for <code>dl</code>

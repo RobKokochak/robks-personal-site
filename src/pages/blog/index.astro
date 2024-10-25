@@ -11,9 +11,9 @@ const { inline = false } = Astro.props;
 
 {
   inline ? (
-    <main class="inline">
+    <div class="inline">
       <BlogContent />
-    </main>
+    </div>
   ) : (
     <Layout title="Blog - Rob Kokochak">
       <BlogContent />

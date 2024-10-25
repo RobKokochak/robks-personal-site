@@ -11,7 +11,7 @@ const { inline = false } = Astro.props;
 
 {
   inline ? (
-    <div>
+    <div class="inline">
       <ProjectsContent />
     </div>
   ) : (
@@ -20,3 +20,9 @@ const { inline = false } = Astro.props;
     </Layout>
   )
 }
+
+<style>
+  .inline {
+    margin-bottom: 2.5rem;
+  }
+</style>
