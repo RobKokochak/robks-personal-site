@@ -1,0 +1,22 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ProjectsContent from "./projects-content.astro";
+
+interface Props {
+  inline?: boolean;
+}
+
+const { inline = false } = Astro.props;
+---
+
+{
+  inline ? (
+    <div>
+      <ProjectsContent />
+    </div>
+  ) : (
+    <Layout title="Projects - Rob Kokochak">
+      <ProjectsContent />
+    </Layout>
+  )
+}
