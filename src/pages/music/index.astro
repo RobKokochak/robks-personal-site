@@ -1,6 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import TranscriptionsContent from "./transcriptions-content.astro";
+import MusicContent from "./music-content.astro";
 
 interface Props {
   inline?: boolean;
@@ -12,11 +12,11 @@ const { inline = false } = Astro.props;
 {
   inline ? (
     <div>
-      <TranscriptionsContent />
+      <MusicContent />
     </div>
   ) : (
-    <Layout title="Transcriptions - Rob Kokochak">
-      <TranscriptionsContent />
+    <Layout title="Music - Rob Kokochak">
+      <MusicContent />
     </Layout>
   )
 }

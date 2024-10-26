@@ -1,6 +1,7 @@
 ---
 title: Justifying Automated Testing
 pubDate: Jan 1 2010
+draft: false
 ---
 
 # STYLESHEET
