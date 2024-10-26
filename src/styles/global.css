@@ -319,7 +319,7 @@ input[type="submit"]:disabled {
     margin-bottom: 1rem;
     border-bottom: 1px solid #ccc;
     display: grid;
-    grid-template-columns: 5fr 1fr;
+    grid-template-columns: 4.5fr 1.5fr;
     margin: 20px 0 0 0;
     padding: 0;
 }
