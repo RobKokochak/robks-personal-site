@@ -1,6 +1,8 @@
 ---
 import GithubLink from "./GithubLink.astro";
 import LinkedInLink from "./LinkedInLink.astro";
+
+const currentYear = new Date().getFullYear();
 ---
 
 <footer>
@@ -10,7 +12,7 @@ import LinkedInLink from "./LinkedInLink.astro";
   </div>
 
   <small>
-    <strong>© Rob Kokochak / 2024</strong>
+    <strong>© Rob Kokochak / {currentYear}</strong>
   </small>
 </footer>
 
