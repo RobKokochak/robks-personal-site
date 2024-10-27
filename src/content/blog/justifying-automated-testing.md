@@ -5,8 +5,9 @@ draft: false
 ---
 # Justifying Automated Testing
 
-There is a phenomenon called the Curse of Knowledge. It states that as you become more and more of an expert in a topic,
-you run a higher and higher risk of being completely out of touch with what it's like to learn that topic -
+There is a phenomenon called [The Curse of Knowledge](https://www.google.com/search?q=the+curse+of+knowledge).
+It states that as you become more and more of an expert in a topic,
+you run a higher and higher risk of being out of touch with what it's like to learn that topic -
 which in turn, makes you less and less effective at teaching that topic.
 
 As an expert, you understand the *why* of things implicitly, because you've had the experiences and internalized
@@ -16,15 +17,12 @@ the consequences enough for it to seem second nature, common knowledge. A lot of
 There are a myriad of tutorials on the topic of software testing. The critical problem with most of these (and many others in the software domain)
 is that they show you the **how**, but they don't illustrate a realistic scenario that actually proves and internalizes
 the **value** of the topic. They assume that you already see the value, or they don't understand what you actually need to hear to be convinced.
-As an instructor, making this mistake is the fastest
-way to lose your students from the jump.
+As an instructor, making this mistake is the fastest way to lose your students from the jump.
 
-The reason why I'm writing this article is because I can safely say that this was
-the topic that frustrated me the most when I was learning.
+The reason why I'm writing this post is because this was probably the topic that frustrated me the most when I was learning.
 It's also the topic that now makes (almost) perfect sense, and has provided the most "a-ha!" moments since I started working as a full-time software engineer.
 
-I'm hoping that it helps others who might be
-experiencing the same frustration I was, and sheds some light on some of the fundamental justifications for **why**
+I'm hoping to shed some light on a few of the fundamental justifications for **why**
 it's important to write tests that I think are critically under-voiced in tutorials on this subject.
 
 I'll also touch on the mistake of writing tests solely for the sake of having them, and some of the pitfalls of herd mentality or "groupthink" around
@@ -42,19 +40,16 @@ It showed exactly **how** to do TDD, but it didn't properly justify **why** writ
 After a novice engineer watches this video, why would they take the extra time to
 implement tests in their projects if the value for writing tests hasn't been illustrated?
 
-But sure enough, as I was building projects in my last few years of school, I kept seeing rehtoric like like
+Around the same time, I was building a lot of projects in my last few years of school, and I kept seeing rhetoric like
 ["Software features that can’t be demonstrated by automated tests simply don’t exist"](https://softwareengineering.stackexchange.com/questions/33869/software-features-that-cant-be-demonstrated-by-automated-tests-simply-dont-ex)
 and ["Test-driven development is a way of managing fear during programming."](https://www.oreilly.com/library/view/learning-test-driven-development/9781098106461/preface01.html)
 
-So I continued seeking out tutorials, books and articles which would show me the way. I spent a lot of time working this out,
-but ultimately, when I went to implement the advice I was reading, I just couldn't justify writing the
-tests. It just didn't make sense from a value perspective - it felt contrived, like I was blindly following dogma.
+But when I went to implement tests in my projects, my question always came back the same. Why would you write a test for something that you already know works?
+In other words, **why would you need a test if you already verified that it works by looking at the output?**
+It just didn't make sense from a value perspective - it felt contrived, like I was blindly following dogma.
 
-My question always came back the same. Why would you write a test for something that you already know works?
-In other words, **why would you need a test if you just verified that it works by looking at the output?**
-
-I knew I was being naive, but I just couldn't justify spending the time and effort. It just felt like I was writing pointless code.
-And when I look back on it now, I realize that my intuition wasn't totally wrong, just under-informed.
+I knew I was being naive, but I just couldn't reasonably justify spending the time and effort.
+But when I look back on it now, I realize that my intuition wasn't totally wrong, just under-informed.
 
 #### Exposure
 
@@ -66,14 +61,14 @@ Like many things in life, procedures, terms, and justifications for best-practic
 can often-times only be understood by exposure. You have to experience the problem to understand the solution. That's why it's so
 difficult for new engineers to break into the industry - they don't know what it means to be an engineer yet.
 
-Software is particularly difficult when it comes to this. You can know a lot about programming paradigms, protocols, algorithms, and the particular
+You can know a lot about programming paradigms, protocols, algorithms, and the particular
 tech stack you've chosen, but you just can't understand the workflow of a software engineering team until you've
 worked in one.
 
 And it wasn't until I was fairly deep in my first role as a software developer,
 building new features on a legacy codebase and experiencing countless bugfixes, refactors, outdated code, and deployment errors,
-that I understood the value of testing. I could
-say I had experienced the consequences of both un-tested code and code with bad tests.
+that I understood the value of testing. It took experiencing the consequences of both un-tested code and code with bad tests first-hand,
+over many months and feature cycles, for me to to realize what they were talking about in those books and tutorials.
 
 #### Software Changes
 
@@ -83,7 +78,7 @@ The reason you write tests *isn't* to prove that your code works *when you write
 The reason you write tests is to ensure that **as the software changes**, and as others (or, you) change the code
 you wrote, that **both the individual units of functionality and the system as a whole still work as you expect**.
 
-They key distinction here, and the one I didn't realize before, was that **software changes**. And when that change happens, unexpected things can go wrong.
+They key distinction here, and the one I don't think is emphasized enough, is that **software changes**. And when that change happens, unexpected things can go wrong.
 While you can still verify that the code you wrote works by looking at the output, you don't always know if the code you wrote just so happened
 to break something else. Writing tests allows you to have more confidence that as the software changes, the existing code still works.
 
@@ -207,23 +202,22 @@ you the confidence that changes won't create unexpected work.
 #### Writing Tests is Hard
 
 Remember how I mentioned that when I was writing tests for my personal projects in school, I had an intuitive feeling that my tests weren't serving a point?
-I still think part of that was correct. It's probably not necessary to write tests for a portfolio website, or a small personal project that's only
-constrained to a few files. UNLESS you foresee them becoming much larger, more complex, or incorporating multiple other engineers.
+I still think part of that was correct. It's probably not necessary to write tests for a static webpage, or a small personal project that's only
+constrained to a few files. UNLESS you foresee them becoming much larger, more complex, being worked on/updated over a long period, or incorporating multiple other engineers.
 
-An interesting part of software engineering is group-think - when Ken Beck says you must write unit tests, suddenly it becomes
+An interesting part of software engineering is group-think. When Ken Beck says you must write unit tests, suddenly it becomes
 unacceptable to write code without them, and the gospel is spread far and wide.
 
 I think this is problematic, because it encourages behavior of writing tests just for the sake of having them. One thing I've learned is that
 **writing effective tests is hard**. It requires a lot of critical thinking, and forces you to understand your code, its relationships, and how it could change over time
 at a very high degree.
 
-Combine this with the dogma of 100% test coverage, release deadlines, and confusing legacy code, and you have a recipe for shortcuts, concessions, and bad tests.
+Combine this with the pressure for 100% test coverage, release deadlines, and confusing legacy code, and you have a recipe for shortcuts, concessions, and bad tests.
 
 Testing frameworks give you a lot of power over how your code behaves. One example is mocks, a particularly powerful tool in a testing framework.
 While sometimes necessary in order to not test implementation details, mocks give you the power to assume that a method will always return a
 specific result. But what if the method you're mocking changes? This could lead to a situation where you have a passing test, but the unit under test is actually failing.
-In this case, you now have a test that gives you *false* confidence -
-which has the potential to be even worse than none at all.
+In this case, you now have a test that gives you *false* confidence - which has the potential to be even worse than none at all.
 
 It's important to know if your tests serve a purpose. You must ask yourself, **does this test have value?**
 If you can't verbally say what it's testing, how it will prevent issues, and how it will remain resilient,
@@ -232,4 +226,5 @@ But it's also clear that doing it well is hard.
 
 As I researched, I realized that this is a topic with a lot of layers, a lot of opinions, and a lot of unanswered questions. And that's probably
 why I found it frustrating in the first place. Because experts can be wrong, group-think exists, and pressure to write tests is high.
-And explaining testing is almost as difficult as writing the tests themselves.
+And explaining testing is almost as difficult as writing the tests themselves. There's a lot more to this topic than what I've shared here, but
+hopefully this helps others looking for that justification that seems to be missing from a lot of the tutorials out there.
