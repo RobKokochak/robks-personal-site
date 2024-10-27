@@ -205,7 +205,7 @@ Remember how I mentioned that when I was writing tests for my personal projects 
 I still think part of that was correct. It's probably not necessary to write tests for a static webpage, or a small personal project that's only
 constrained to a few files. UNLESS you foresee them becoming much larger, more complex, being worked on/updated over a long period, or incorporating multiple other engineers.
 
-An interesting part of software engineering is group-think. When Ken Beck says you must write unit tests, suddenly it becomes
+An interesting part of software engineering is group-think. When Kent Beck says you must write unit tests, suddenly it becomes
 unacceptable to write code without them, and the gospel is spread far and wide.
 
 I think this is problematic, because it encourages behavior of writing tests just for the sake of having them. One thing I've learned is that
@@ -218,6 +218,8 @@ Testing frameworks give you a lot of power over how your code behaves. One examp
 While sometimes necessary in order to not test implementation details, mocks give you the power to assume that a method will always return a
 specific result. But what if the method you're mocking changes? This could lead to a situation where you have a passing test, but the unit under test is actually failing.
 In this case, you now have a test that gives you *false* confidence - which has the potential to be even worse than none at all.
+
+#### On Value
 
 It's important to know if your tests serve a purpose. You must ask yourself, **does this test have value?**
 If you can't verbally say what it's testing, how it will prevent issues, and how it will remain resilient,
