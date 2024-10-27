@@ -222,14 +222,13 @@ Combine this with the dogma of 100% test coverage, release deadlines, and confus
 Testing frameworks give you a lot of power over how your code behaves. One example is mocks, a particularly powerful tool in a testing framework.
 While sometimes necessary in order to not test implementation details, mocks give you the power to assume that a method will always return a
 specific result. But what if the method you're mocking changes? This could lead to a situation where you have a passing test, but the unit under test is actually failing.
-
-It's very easy to just mock everything, without regard for this possibility. And this could lead to a test that gives you *false* confidence -
+In this case, you now have a test that gives you *false* confidence -
 which has the potential to be even worse than none at all.
 
 It's important to know if your tests serve a purpose. You must ask yourself, **does this test have value?**
 If you can't verbally say what it's testing, how it will prevent issues, and how it will remain resilient,
-you should reconsider your approach. It's clear that testing is important, but it's also clear that it must be done well to be effective.
-And it's also clear that doing it well is hard.
+you should reconsider your approach. It's clear that testing is important, and that it must be done well to be effective.
+But it's also clear that doing it well is hard.
 
 As I researched, I realized that this is a topic with a lot of layers, a lot of opinions, and a lot of unanswered questions. And that's probably
 why I found it frustrating in the first place. Because experts can be wrong, group-think exists, and pressure to write tests is high.
