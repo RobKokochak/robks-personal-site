@@ -1,306 +1,236 @@
 ---
 title: Justifying Automated Testing
-pubDate: Jan 1 2010
+pubDate: Oct 27 2024
 draft: false
 ---
+# Justifying Automated Testing
 
-# STYLESHEET
+There is a phenomenon called the Curse of Knowledge. It states that as you become more and more of an expert in a topic,
+you run a higher and higher risk of being completely out of touch with what it's like to learn that topic -
+which in turn, makes you less and less effective at teaching that topic.
 
-## This is 2nd level heading
+As an expert, you understand the *why* of things implicitly, because you've had the experiences and internalized
+the consequences enough for it to seem second nature, common knowledge. A lot of the rhetoric around software testing
+(and more broadly, software) can make it seem like it's obvious. But without that context of experience, it actually isn't.
 
-This is a test paragraph.
+There are a myriad of tutorials on the topic of software testing. The critical problem with most of these (and many others in the software domain)
+is that they show you the **how**, but they don't illustrate a realistic scenario that actually proves and internalizes
+the **value** of the topic. They assume that you already see the value, or they don't understand what you actually need to hear to be convinced.
+As an instructor, making this mistake is the fastest
+way to lose your students from the jump.
 
-### This is 3rd level heading
+The reason why I'm writing this article is because I can safely say that this was
+the topic that frustrated me the most when I was learning.
+It's also the topic that now makes (almost) perfect sense, and has provided the most "a-ha!" moments since I started working as a full-time software engineer.
 
-This is a test paragraph.
+I'm hoping that it helps others who might be
+experiencing the same frustration I was, and sheds some light on some of the fundamental justifications for **why**
+it's important to write tests that I think are critically under-voiced in tutorials on this subject.
 
-#### This is 4th level heading
+I'll also touch on the mistake of writing tests solely for the sake of having them, and some of the pitfalls of herd mentality or "groupthink" around
+writing tests that lead to test suites that don't actually catch bugs, or worse, create them.
 
-This is a test paragraph.
+#### Why write a test for something that you already know works?
 
-##### This is 5th level heading
+A few years ago, I watched the [Fireship tutorial on TDD with Jest](https://youtu.be/Jv2uxzhPFl4?si=OVVVh59W6oCYRDov&t=365),
+where he used the example of implementing a stack with Javascript.
+First, he wrote tests for the methods. Then, he implemented the functionality to make them pass. It was a great video on how to do
+TDD, but I just couldn't understand the point.
 
-This is a test paragraph.
+The problem is, it's so obvious that the software he wrote works, that it makes no sense as an example.
+It showed exactly **how** to do TDD, but it didn't properly justify **why** writing the tests is valuable.
+After a novice engineer watches this video, why would they take the extra time to
+implement tests in their projects if the value for writing tests hasn't been illustrated?
 
-###### This is 6th level heading
+But sure enough, as I was building projects in my last few years of school, I kept seeing rehtoric like like
+["Software features that can’t be demonstrated by automated tests simply don’t exist"](https://softwareengineering.stackexchange.com/questions/33869/software-features-that-cant-be-demonstrated-by-automated-tests-simply-dont-ex)
+and ["Test-driven development is a way of managing fear during programming."](https://www.oreilly.com/library/view/learning-test-driven-development/9781098106461/preface01.html)
 
-This is a test paragraph.
+So I continued seeking out tutorials, books and articles which would show me the way. I spent a lot of time working this out,
+but ultimately, when I went to implement the advice I was reading, I just couldn't justify writing the
+tests. It just didn't make sense from a value perspective - it felt contrived, like I was blindly following dogma.
 
-```js
-const copyButton = document.getElementById("copy-button");
-const copyButtonFeedback = document.getElementById("copy-button-feedback");
+My question always came back the same. Why would you write a test for something that you already know works?
+In other words, **why would you need a test if you just verified that it works by looking at the output?**
 
-copyButton.addEventListener("click", () => {
-  const clipboard = navigator.clipboard || window.clipboard;
-  const snippetText = document.querySelector(`#link-snippet code`).textContent;
+I knew I was being naive, but I just couldn't justify spending the time and effort. It just felt like I was writing pointless code.
+And when I look back on it now, I realize that my intuition wasn't totally wrong, just under-informed.
 
-  clipboard
-    .writeText(snippetText)
-    .then(() => {
-      copyButtonFeedback.textContent = "✔";
-    })
-    .catch(() => {
-      copyButtonFeedback.textContent = "❌";
-    })
-    .then(() =>
-      setTimeout(() => {
-        copyButtonFeedback.textContent = "";
-      }, 1000)
-    );
+#### Exposure
+
+In a CS curriculum, you do a lot of "contained" work. Small, individual projects or programming assignments. Usually, alone or with a partner.
+These projects probably aren't anywhere near the scale of a production application, and are
+usually short-lived - at most, a semester or two.
+
+Like many things in life, procedures, terms, and justifications for best-practices in software engineering
+can often-times only be understood by exposure. You have to experience the problem to understand the solution. That's why it's so
+difficult for new engineers to break into the industry - they don't know what it means to be an engineer yet.
+
+Software is particularly difficult when it comes to this. You can know a lot about programming paradigms, protocols, algorithms, and the particular
+tech stack you've chosen, but you just can't understand the workflow of a software engineering team until you've
+worked in one.
+
+And it wasn't until I was fairly deep in my first role as a software developer,
+building new features on a legacy codebase and experiencing countless bugfixes, refactors, outdated code, and deployment errors,
+that I understood the value of testing. I could
+say I had experienced the consequences of both un-tested code and code with bad tests.
+
+#### Software Changes
+
+Here is the justification I wish I had heard when I was learning:
+
+The reason you write tests *isn't* to prove that your code works *when you write it*. That's a side-effect, but it's not the main purpose.
+The reason you write tests is to ensure that **as the software changes**, and as others (or, you) change the code
+you wrote, that **both the individual units of functionality and the system as a whole still work as you expect**.
+
+They key distinction here, and the one I didn't realize before, was that **software changes**. And when that change happens, unexpected things can go wrong.
+While you can still verify that the code you wrote works by looking at the output, you don't always know if the code you wrote just so happened
+to break something else. Writing tests allows you to have more confidence that as the software changes, the existing code still works.
+
+I'll illustrate what I mean with an example.
+
+Let's say you had a `UserProfileUtils` class, which has a method that returns formatted user data. Before, it just returned `id`, `name` and `email`.
+
+```javascript
+class UserProfileUtils {
+  static formatUserData(userData) {
+
+    return {
+      id: userData.id,
+      name: userData.name,
+      email: userData.email
+    };
+  }
+}
+```
+
+You add a new feature to return the user's formatted address based on their region, which requires a user's
+region to be passed. This will be displayed in the user's profile page.
+
+```javascript
+class UserProfileUtils {
+  static formatUserData(userData, regionSettings) { // Added regionSettings parameter
+
+    return {
+      id: userData.id,
+      name: userData.name,
+      email: userData.email,
+      // Added formattedAddress which depends on 'regionSettings' input
+      formattedAddress: this.computeRegionalAddress(userData.address, regionSettings)
+    };
+  }
+  // added method to compute formattedAddress
+  static computeRegionalAddress(address, regionSettings) {
+    return `${address} (${regionSettings.format})`;
+  }
+}
+```
+
+When you use this in the `UserProfile` component, it works as expected:
+```javascript
+const UserProfile = ({ userData, regionSettings }) => {
+  const formattedData = UserProfileUtils.formatUserData(userData, regionSettings);
+
+  return (
+    <div>
+      <h2>{formattedData.name}</h2>
+      <p>{formattedData.email}</p>
+      <p>{formattedData.formattedAddress}</p>
+    </div>
+  );
+};
+```
+
+Now, you put the code up for review, and it gets merged in to the `dev` branch. You start working on new features.
+
+A few months go by, and it's time to do a major version release. As QA is going through manual E2E tests a few days before, they notice that
+a new error has been raised. In another part of the app, a component called `AdminUserList` is returning a "cannot read properties
+of null" error.
+
+```javascript
+const AdminUserList = ({ users }) => {
+  const formattedUsers = users.map(user =>
+    UserProfileUtils.formatUserData(user);
+  );
+
+  return (
+    <div>
+      {formattedUsers.map(user => (
+        <div key={user.id}>
+          <span>{user.name}</span>
+          <span>{user.email}</span>
+        </div>
+      ))}
+    </div>
+  );
+};
+```
+
+This causes panic to ensue, as the release deadline is tomorrow, and the bug gets assigned to you.
+You haven't worked on the original issue in months, so you don't know how this error could have happened
+(assume that the components, classes and methods would be significantly more complex in a real scenario).
+
+After spending hours debugging, you realize that the change you made to include the formatted address in the user
+profile is the problem, as `regionSettings` is now a required input to the `formatUserData` method, which `AdminUserList` is calling. This causes the null error,
+as UserProfileUtils is trying to compute a value from a null input. This wasn't caught before
+because it's in a very little-used part of the app, and no one had considered that changes to
+the User Profile could have affected this.
+
+If there had been an automated test to check that `AdminUserList` rendered what it was expected to,
+and that test was run prior to pushing the new changes to `dev`, this error could
+have been caught before the code was even pushed to code review. And because the output of that test
+would have happened during the development of the new feature, it would have been significantly easier to find
+the root of the problem.
+
+```javascript
+// What the test could have looked like
+describe('AdminUserList', () => {
+  it('should render list of users', () => {
+    const mockUsers = [
+      { id: 1, name: 'John', email: 'john@example.com' },
+      { id: 2, name: 'Jane', email: 'jane@example.com' }
+    ];
+
+    // The error would have been raised here, instead of during manual E2E testing
+    render(<AdminUserList users={mockUsers} />);
+
+    expect(screen.getByText('John')).toBeInTheDocument();
+    expect(screen.getByText('Jane')).toBeInTheDocument();
+  });
 });
 ```
 
-<h2>Basic block level elements</h2>
+By writing this test, you are proving that `AdminUserList` works as you expect it to. But that's not why the test is valuable.
+The test is valuable because it ensures that `AdminUserList` **continues** to work as you expect it to over time. It gives
+you the confidence that changes won't create unexpected work.
 
-<p>This is a normal paragraph (<code>p</code> element).
-To add some length to it, let us mention that this page was
-primarily written for testing the effect of <strong>user style sheets</strong>.
-You can use it for various other purposes as well, like just checking how
-your browser displays various HTML elements by default.
-It can also be useful when testing conversions from HTML
-format to other formats, since some elements can go wrong then.</p>
-<p>This is another paragraph. I think it needs to be added that
-the set of elements tested is not exhaustive in any sense. I have selected
-those elements for which it can make sense to write user style sheet rules,
-in my opionion.</p>
-<div>This is a <code>div</code> element. Authors may use such elements instead
-of paragraph markup for various reasons. (End of <code>div</code>.)</div>
-<blockquote><p>This is a block quotation containing a single
-paragraph. Well, not quite, since this is not <em>really</em>
-quoted text, but I hope you understand the point. After all, this
-page does not use HTML markup very normally anyway.</p></blockquote>
-<p>The following contains address information about the author, in an <code>address</code>
-element.</p>
-<address>
-<a href="../personal.html" lang="fi" hreflang="en">Jukka Korpela</a>,
-<a href="mailto:jkorpela@cs.tut.fi">jkorpela@cs.tut.fi</A><br>
-Päivänsäteenkuja 4 A, Espoo, Finland
-</address>
+#### Writing Tests is Hard
 
-<h2>Lists</h2>
+Remember how I mentioned that when I was writing tests for my personal projects in school, I had an intuitive feeling that my tests weren't serving a point?
+I still think part of that was correct. It's probably not necessary to write tests for a portfolio website, or a small personal project that's only
+constrained to a few files. UNLESS you foresee them becoming much larger, more complex, or incorporating multiple other engineers.
 
-<p>This is a paragraph before an <strong>unnumbered</strong> list (<code>ul</code>). Note that
-the spacing between a paragraph and a list before or after that is hard
-to tune in a user style sheet. You can't guess which paragraphs are
-logically related to a list, e.g. as a "list header".</p>
-<ul>
-  <li> One.
-  <li> Two.
-  <li> Three. Well, probably this list item should be longer. Note that
-for short items lists look better if they are compactly presented,
-       whereas for long items, it would be better to have more vertical spacing between items.
-  <li> Four. This is the last item in this list.
-       Let us terminate the list now without making any more fuss about it.
-</ul>
-<p>The following is a <code>menu</code> list:</p>
-<menu>
-  <li> One.
-  <li> Two.
-  <li> Three. Well, probably this list item should be longer so that it will
-probably wrap to the next line in rendering.
-</menu>
-<p>The following is a <code>dir</code> list:</p>
-<dir>
-  <li> One.
-  <li> Two.
-  <li> Three. Well, probably this list item should be longer so that it will
-probably wrap to the next line in rendering.
-</dir>
+An interesting part of software engineering is group-think - when Ken Beck says you must write unit tests, suddenly it becomes
+unacceptable to write code without them, and the gospel is spread far and wide.
 
-<p>This is a paragraph before a <strong>numbered</strong> list (<code>ol</code>). Note that
-the spacing between a paragraph and a list before or after that is hard
-to tune in a user style sheet. You can't guess which paragraphs are
-logically related to a list, e.g. as a "list header".</p>
-<ol>
-  <li> One.
-  <li> Two.
-  <li> Three. Well, probably this list item should be longer. Note that if
-items are short, lists look better if they are compactly presented,
-       whereas for long items, it would be better to have more vertical spacing between items.
-  <li> Four. This is the last item in this list.
-       Let us terminate the list now without making any more fuss about it.
-</ol>
+I think this is problematic, because it encourages behavior of writing tests just for the sake of having them. One thing I've learned is that
+**writing effective tests is hard**. It requires a lot of critical thinking, and forces you to understand your code, its relationships, and how it could change over time
+at a very high degree.
 
-<p>This is a paragraph before a <strong>definition</strong> list (<code>dl</code>).
-In principle, such a list should consist of <em>terms</em> and associated
-definitions.
-But many authors use <code>dl</code> elements for fancy "layout" things. Usually the
-effect is not <em>too</em> bad, if you design user style sheet rules for <code>dl</code>
-which are suitable
-for real definition lists.
-<dl>
-  <dt> recursion
-  <dd> see recursion
-  <dt> recursion, indirect
-  <dd> see indirect recursion
-  <dt> indirect recursion
-  <dd> see recursion, indirect
-  <dt> term
-  <dd> a word or other expression taken into specific use in
-       a well-defined meaning, which is often defined rather rigorously, even
-       formally, and may differ quite a lot from an everyday meaning
-</dl>
+Combine this with the dogma of 100% test coverage, release deadlines, and confusing legacy code, and you have a recipe for shortcuts, concessions, and bad tests.
 
-<h2>Text-level markup</h2>
+Testing frameworks give you a lot of power over how your code behaves. One example is mocks, a particularly powerful tool in a testing framework.
+While sometimes necessary in order to not test implementation details, mocks give you the power to assume that a method will always return a
+specific result. But what if the method you're mocking changes? This could lead to a situation where you have a passing test, but the unit under test is actually failing.
 
-<ul>
-  <li> <abbr title="Cascading Style Sheets">CSS</abbr> (an abbreviation;
- <code>abbr</code> markup used)
-  <li> <acronym title="radio detecting and ranging">radar</acronym> (an acronym; <code>acronym</code> markup used)
-  <li> <b>bolded</b> (<code>b</code> markup used - just bolding with unspecified
-       semantics)
-  <li> <big>big thing</big> (<code>big</code> markup used)
-  <li> <font size=6>large size</font> (<code>font size=6</code> markup used)
-  <li> <font face=Courier>Courier font</font> (<code>font face=Courier</code> markup used)
-  <li> <font color=red>red text</font> (<code>font color=red</code> markup used)
-  <li> <cite>Origin of Species</cite> (a book title;
-       <code>cite</code> markup used)
-  <li> <code>a[i] = b[i] + c[i);</code> (computer code; <code>code</code> markup used)
-  <li> here we have some <del>deleted</del> text (<code>del</code> markup used)
-  <li> an <dfn>octet</dfn> is an entity consisting of eight bits
-       (<code>dfn</code> markup used for the term being defined)
-  <li> this is <em>very</em> simple (<code>em</code> markup used for emphasizing
-       a word)
-  <li> <i lang="la">Homo sapiens</i> (should appear in italics;  <code>i</code> markup used)
-  <li> here we have some <ins>inserted</ins> text (<code>ins</code> markup used)
-  <li> type <kbd>yes</kbd> when prompted for an answer (<code>kbd</code> markup
-       used for text indicating keyboard input)
-  <li> <q>Hello!</q> (<code>q</code> markup used for quotation)
-  <li> He said: <q>She said <q>Hello!</q></q> (a quotation inside a quotation)
-  <li> you may get the message <samp>Core dumped</samp> at times
-       (<code>samp</code> markup used for sample output)
-  <li> <small>this is not that important</small> (<code>small</code> markup used)
-  <li> <strike>overstruck</strike> (<code>strike</code> markup used; note:
-       <code>s</code> is a nonstandard synonym for <code>strike</code>)
-  <li> <strong>this is highlighted text</strong> (<code>strong</code>
-       markup used)
-  <li> In order to test how subscripts and superscripts (<code>sub</code> and
-       <code>sup</code> markup) work inside running text, we need some
-       dummy text around constructs like x<sub>1</sub> and H<sub>2</sub>O
-       (where subscripts occur). So here is some fill so that
-       you will (hopefully) see whether and how badly the subscripts
-       and superscripts mess up vertical spacing between lines.
-       Now superscripts: M<sup>lle</sup>, 1<sup>st</sup>, and then some
-       mathematical notations: e<sup>x</sup>, sin<sup>2</sup> <i>x</i>,
-       and some nested superscripts (exponents) too:
-       e<sup>x<sup>2</sup></sup> and f(x)<sup>g(x)<sup>a+b+c</sup></sup>
-       (where 2 and a+b+c should appear as exponents of exponents).
-  <li> <tt>text in monospace font</tt> (<code>tt</code> markup used)
-  <li> <u>underlined</u> text (<code>u</code> markup used)
-  <li> the command <code>cat</code> <var>filename</var> displays the
-       file specified by the <var>filename</var> (<code>var</code> markup
-       used to indicate a word as a variable).
-</ul>
+It's very easy to just mock everything, without regard for this possibility. And this could lead to a test that gives you *false* confidence -
+which has the potential to be even worse than none at all.
 
-<p>Some of the elements tested above are typically displayed in a monospace
-font, often using the <em>same</em> presentation for all of them. This
-tests whether that is the case on your browser:</p>
+It's important to know if your tests serve a purpose. You must ask yourself, **does this test have value?**
+If you can't verbally say what it's testing, how it will prevent issues, and how it will remain resilient,
+you should reconsider your approach. It's clear that testing is important, but it's also clear that it must be done well to be effective.
+And it's also clear that doing it well is hard.
 
-<ul>
-  <li> <code>This is sample text inside code markup</code>
-  <li> <kbd>This is sample text inside kbd markup</kbd>
-  <li> <samp>This is sample text inside samp markup</samp>
-  <li> <tt>This is sample text inside tt markup</tt>
-</ul>
-<h2>Links</h2>
-<ul>
-<li> <a href="../index.html">main page</a>
-<li> <a href=
-"http://www.unicode.org/versions/Unicode4.0.0/ch06.pdf"
-title="Writing Systems and Punctuation"
-type="application/pdf"
->Unicode Standard, chapter&nbsp;6</a>
-</ul>
-
-<p>This is a text paragraph that contains some
-inline links. Generally, inline links (as opposite to e.g. links
-lists) are problematic
-from the
-<a href="http://www.useit.com">usability</a> perspective,
-but they may have use as
-&#8220;incidental&#8221;, less relevant links. See the document
-<cite><a href="links.html">Links Want To Be Links</a></cite>.</p>
-
-<h2>Forms</h2>
-
-<form action="http://www.cs.tut.fi/cgi-bin/run/~jkorpela/echo.cgi">
-<div>
-<input type="hidden" name="hidden field" value="42">
-This is a form containing various fields (with some initial
-values (defaults) set, so that you can see how input text looks
-like without actually typing it):</div>
-<div><label for="but">Button:
-<button id="but" type="submit" name="foo" value="bar">A cool<br>button</button></label></div>
-<div><label for="f0">Reset button:
-<input id="f0" type="reset" name="reset" value="Reset"></label></div>
-<div><label for="f1">Single-line text input field: <input id="f1" name="text" size="20" value="Default text."></label></div>
-<div><label for="f2">Multi-line text input field (textarea):</label><br>
-<textarea id="f2" name="textarea" rows="2" cols="20">
-Default text.
-</textarea></div>
-<div>The following two radio buttons are inside
-a <code>fieldset</code> element with a <code>legend</code>:</div>
-<fieldset>
-<legend>Legend</legend>
-<div><label for="f3"><input id="f3" type="radio" name="radio" value="1"> Radio button 1</label></div>
-<div><label for="f4"><input id="f4" type="radio" name="radio" value="2" checked> Radio button 2 (initially checked)</label></div>
-</fieldset>
-<fieldset>
-<legend>Check those that apply</legend>
-<div><label for="f5"><input id="f5" type="checkbox" name="checkbox"> Checkbox 1</label></div>
-<div><label for="f6"><input id="f6" type="checkbox" name="checkbox2" checked> Checkbox 2 (initially checked)</label></div>
-</fieldset>
-<div><label for="f10">A <code>select</code> element with <code>size="1"</code>
-(dropdown box):
-<select id="f10" name="select1" size="1">
-<option>one
-<option selected>two (default)
-<option>three
-</select></label></div>
-<div><label for="f11">A <code>select</code> element with <code>size="3"</code>
-(listbox):</label><br>
-<select id="f11" name="select2" size="3">
-<option>one
-<option selected>two (default)
-<option>three
-</select></div>
-<div><label for="f99">Submit button:
-<input id="f99" type="submit" name="submit" value="Just a test"></label></div>
-</form>
-
-<h2>Tables</h2>
-
-<p>The following table has a caption. The first row and the first column
-contain table header cells (<code>th</code> elements) only; other cells
-are data cells (<code>td</code> elements), with <code>align="right"</code>
-attributes:</p>
-
-<TABLE summary=
-"Each row names a Nordic country and specifies its total area and land area, in square kilometers">
-<CAPTION>Sample table: Areas of the Nordic countries, in sq km</CAPTION>
-<TR><th scope="col">Country</th> <th scope="col">Total area</TH> <th scope="col">Land area</TH>
-<TR><th scope="row">Denmark</TH> <TD ALIGN=RIGHT> 43,070 </TD><TD ALIGN=RIGHT> 42,370</TR>
-<TR><th scope="row">Finland</TH> <TD ALIGN=RIGHT>337,030 </TD><TD ALIGN=RIGHT>305,470</TR>
-<TR><th scope="row">Iceland</TH> <TD ALIGN=RIGHT>103,000 </TD><TD ALIGN=RIGHT>100,250</TR>
-<TR><th scope="row">Norway</TH>  <TD ALIGN=RIGHT>324,220 </TD><TD ALIGN=RIGHT>307,860</TR>
-<TR><th scope="row">Sweden</TH>  <TD ALIGN=RIGHT>449,964 </TD><TD ALIGN=RIGHT>410,928</TR>
-</TABLE>
-
-<h2>Character test</h2>
-<p>The following table has some sample characters with
-annotations. If the browser&#8217;s default font does not
-contain all of them, they may get displayed using backup fonts.
-This may cause stylistic differences, but it should not
-prevent the characters from being displayed at all.</p>
-
-<table>
-<tr><th>Char. <th>Explanation <th>Notes
-<tr><td>ê <td>e with circumflex <td>Latin 1 character, should be ok
-<tr><td>&#8212; <td>em dash <td>Windows Latin 1 character, should be ok, too
-<tr><td>&#x100; <td>A with macron (line above) <td>Latin Extended-A character, not present in all fonts
-<tr><td>&Omega; <td>capital omega <td>A Greek letter
-<tr><td>&#x2212; <td>minus sign <td>Unicode minus
-<tr><td>&#x2300; <td>diameter sign <td>relatively rare in fonts
-</table>
-
-</div>
+As I researched, I realized that this is a topic with a lot of layers, a lot of opinions, and a lot of unanswered questions. And that's probably
+why I found it frustrating in the first place. Because experts can be wrong, group-think exists, and pressure to write tests is high.
+And explaining testing is almost as difficult as writing the tests themselves.
