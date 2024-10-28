@@ -14,7 +14,7 @@ As an expert, you understand the *why* of things implicitly, because you've had 
 the consequences enough for it to seem second nature, common knowledge. A lot of the rhetoric around software testing
 (and more broadly, software) can make it seem like it's obvious. But without that context of experience, it actually isn't.
 
-There are a myriad of tutorials on the topic of software testing. The critical problem with most of these (and many others in the software domain)
+The critical problem with most of the tutorials on software testing (and many others in the software domain)
 is that they show you the **how**, but they don't illustrate a realistic scenario that actually proves and internalizes
 the **value** of the topic. They assume that you already see the value, or they don't understand what you actually need to hear to be convinced.
 As an instructor, making this mistake is the fastest way to lose your students from the jump.
@@ -36,9 +36,7 @@ First, he wrote tests for the methods. Then, he implemented the functionality to
 TDD, but I just couldn't understand the point.
 
 The problem is, it's so obvious that the software he wrote works, that it makes no sense as an example.
-It showed exactly **how** to do TDD, but it didn't properly justify **why** writing the tests is valuable.
-After a novice engineer watches this video, why would they take the extra time to
-implement tests in their projects if the value for writing tests hasn't been illustrated?
+It showed exactly how to do TDD, but it didn't properly justify why writing the tests is valuable.
 
 Around the same time, I was building a lot of projects in my last few years of school, and I kept seeing rhetoric like
 ["Software features that can’t be demonstrated by automated tests simply don’t exist"](https://softwareengineering.stackexchange.com/questions/33869/software-features-that-cant-be-demonstrated-by-automated-tests-simply-dont-ex)
@@ -58,15 +56,13 @@ These projects probably aren't anywhere near the scale of a production applicati
 usually short-lived - at most, a semester or two.
 
 Like many things in life, procedures, terms, and justifications for best-practices in software engineering
-can often-times only be understood by exposure. You have to experience the problem to understand the solution. That's why it's so
-difficult for new engineers to break into the industry - they don't know what it means to be an engineer yet.
-
+can often-times only be understood by exposure. You have to experience the problem to understand the solution.
 You can know a lot about programming paradigms, protocols, algorithms, and the particular
 tech stack you've chosen, but you just can't understand the workflow of a software engineering team until you've
 worked in one.
 
 And it wasn't until I was fairly deep in my first role as a software developer,
-building new features on a legacy codebase and experiencing countless bugfixes, refactors, outdated code, and deployment errors,
+building new features on a legacy codebase and experiencing countless bugs, refactors, outdated code, and deployment errors,
 that I understood the value of testing. It took experiencing the consequences of both un-tested code and code with bad tests first-hand,
 over many months and feature cycles, for me to to realize what they were talking about in those books and tutorials.
 
@@ -110,7 +106,7 @@ class UserProfileUtils {
       id: userData.id,
       name: userData.name,
       email: userData.email,
-      // Added formattedAddress which depends on 'regionSettings' input
+      // Added formattedAddress, which depends on 'regionSettings' input
       formattedAddress: this.computeRegionalAddress(userData.address, regionSettings)
     };
   }
@@ -227,6 +223,8 @@ you should reconsider your approach. It's clear that testing is important, and t
 But it's also clear that doing it well is hard.
 
 As I researched, I realized that this is a topic with a lot of layers, a lot of opinions, and a lot of unanswered questions. And that's probably
-why I found it frustrating in the first place. Because experts can be wrong, group-think exists, and pressure to write tests is high.
-And explaining testing is almost as difficult as writing the tests themselves. There's a lot more to this topic than what I've shared here, but
+why I found it frustrating in the first place. Because experts can be wrong, group-think is powerful, and pressure to write tests is high.
+And explaining testing is almost as difficult as writing the tests themselves.
+
+There's a lot more to this topic than what I've shared here, but
 hopefully this helps others looking for that justification that seems to be missing from a lot of the tutorials out there.
