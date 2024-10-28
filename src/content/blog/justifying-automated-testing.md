@@ -55,11 +55,10 @@ In a CS curriculum, you do a lot of "contained" work. Small, individual projects
 These projects probably aren't anywhere near the scale of a production application, and are
 usually short-lived - at most, a semester or two.
 
-Like many things in life, procedures, terms, and justifications for best-practices in software engineering
-can often-times only be understood by exposure. You have to experience the problem to understand the solution.
-You can know a lot about programming paradigms, protocols, algorithms, and the particular
-tech stack you've chosen, but you just can't understand the workflow of a software engineering team until you've
-worked in one.
+Like many things in life, procedures, terms, and justifications for best-practices in software engineering can often-times only be understood by exposure.
+You have to experience the problem to understand the solution.
+You can know a lot about programming paradigms, protocols, algorithms, and the particular tech stack you've chosen,
+but you can't truly understand the workflow of a software engineering team until you've worked in one.
 
 And it wasn't until I was fairly deep in my first role as a software developer,
 building new features on a legacy codebase and experiencing countless bugs, refactors, outdated code, and deployment errors,
