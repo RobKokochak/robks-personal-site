@@ -1,38 +1,23 @@
 ---
+import { getCollection } from "astro:content";
+import FormattedDate from "../../components/FormattedDate.astro";
 import "../../styles/global.css";
+
+const posts = (await getCollection("music"))
+  .filter((p) => !p.data.draft)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
 <h2>Music</h2>
-<div class="post-item">
-  <a
-    class="title"
-    href="https://www.dropbox.com/scl/fi/c83rsndydn8paaudwl7b1/Spiraling_Prism.pdf?rlkey=czmz5hkupfut2t4u3tmu4sjti&st=0efn3ikq&dl=1"
-    target="_blank"
-    rel="noopener nofollow noreferrer"
-  >
-    Spiraling Prism
-  </a>
-  <span class="subtitle">Herbie Hancock</span>
-</div>
-<div class="post-item">
-  <a
-    class="title"
-    href="https://www.dropbox.com/scl/fi/a1mckgplhvs2jcnc9uea6/Weak.pdf?rlkey=20xj5e8kclau9sp17q0n2ta2z&st=kel5r71b&dl=1"
-    target="_blank"
-    rel="noopener nofollow noreferrer"
-  >
-    Weak
-  </a>
-  <span class="subtitle">SWV, arr. Parlato</span>
-</div>
-<div class="post-item">
-  <a
-    class="title"
-    href="https://www.dropbox.com/scl/fi/b03b8qd233rs7xiyywlh6/Creepin.pdf?rlkey=esq7pqdbdw70xhv4hhfkiwumt&st=tqq3h53q&dl=1"
-    target="_blank"
-    rel="noopener nofollow noreferrer"
-  >
-    Creepin'
-  </a>
-  <span class="subtitle">Stevie Wonder</span>
-</div>
+{
+  posts.map((post) => (
+    <div class="post-item">
+      <a href={`/music/${post.slug}/`}>
+        <h2 class="title">{post.data.title}</h2>
+      </a>
+      <span class="subtitle">
+        <FormattedDate date={post.data.pubDate} />
+      </span>
+    </div>
+  ))
+}
