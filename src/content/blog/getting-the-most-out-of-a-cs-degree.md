@@ -180,8 +180,7 @@ behind you invested in your success.
 
 #### Conclusion
 ---
-If I could go back and do it again, I would have focused much more of my efforts on getting into the best school I could, starting to build my portfolio and seek real-world experience as soon as possible, finding the best engineers around me, and nurturing my network, instead of focusing so much on academics. While I still believe high academic performance is a great indicator of a strong engineer,
-it's just not the highest impact thing you could be focusing on when you are a CS student.
+If I could go back and do it again, I would have focused much more of my efforts on getting into the best school I could, starting to build my portfolio and seek real-world experience as soon as possible, finding the best engineers around me, and nurturing my network, instead of focusing so much on academic performance.
 
 In many cases, success is the result of luck. When I got my internship, it was because 
 I connected with the interviewer over our mutual love of music. And the reason why
