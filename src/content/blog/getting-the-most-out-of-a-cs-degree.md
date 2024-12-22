@@ -48,7 +48,7 @@ a strategy for getting the most out of a CS Degree.
 The people you meet are probably the most valuable resource you gain from a CS degree.
 Make it your priority to surround yourself with the best engineers you can find.
 
-You'll meet a lot of very smart people in a CS program. But remember that raw technical prowess/math skills alone aren't the mark a great engineer.
+You'll meet a lot of very smart people in a CS program. But remember that raw technical prowess/math skills alone aren't the mark of a great engineer.
 
 Great engineers are the ones who are focused on building things, helping others, and are the best communicators.
 Usually, they're the ones who aren't too focused on grades or school performance. They're probably also the ones who spend their free time building
@@ -180,15 +180,16 @@ behind you invested in your success.
 
 #### Conclusion
 ---
-Hopefully, these principles serve some guidance if you're looking to get the most out of a CS degree. If I could go back and do it again, I would have focused much more of my efforts on getting into the best school I could, starting to build my portfolio and seek real-world experience as soon as possible, finding the best engineers around me, and nurturing my network, instead of focusing so much on academics. 
+If I could go back and do it again, I would have focused much more of my efforts on getting into the best school I could, starting to build my portfolio and seek real-world experience as soon as possible, finding the best engineers around me, and nurturing my network, instead of focusing so much on academics. While I still believe high academic performance is a great indicator of a strong engineer,
+it's just not the highest impact thing you could be focusing on when you are a CS student.
 
-In many cases,
-success is the result of luck. When I got my internship, it was because I connected with the interviewer over our mutual love of music. And the reason why
-I got my job offer was because I had a personal recommendation from a teammate in my senior design group, who had been working there as an intern for over a year.
+In many cases, success is the result of luck. When I got my internship, it was because 
+I connected with the interviewer over our mutual love of music. And the reason why
+I got my job offer was because I had a personal recommendation from a teammate in my senior design group, 
+who had been working there as an intern for over a year.
 
 But remember that while luck is chance, it's also proportional to both how often you show up and the size/quality of your network. That's why it's so important to spend the time in CS school meeting and working with as many people as you can.
-People who are very successful may seem to be experts in 'making their own luck', but they would probably describe it as trying, and failing,
-a whole lot more than the average person.
+People who are very successful may seem to be experts in 'making their own luck', but they would probably describe it as trying, and failing, a whole lot more than the average person.
 
 #### Burnout: A Quick Reminder
 
