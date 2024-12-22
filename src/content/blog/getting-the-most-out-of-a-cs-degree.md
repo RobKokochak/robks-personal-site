@@ -80,7 +80,7 @@ List out all the things you need to do to reach your goals, and prioritize them
 based on which ones provide the most multiplicative value. If your goal is to get a job, this includes things like building projects,
 formulating your technical specialty, networking, attaining
 real-world experience, and building up your portfolio. Pick which ones are the most important and where you are lacking the most, and set goals which enable them
-(check out [OKRs](https://www.google.com/search?q=objective+key+results) and [SMART Goal Framework](https://www.google.com/search?q=smart+goal+framework)).
+(check out <a href="https://www.google.com/search?q=objective+key+results" target="_blank">OKRs</a> and <a href="https://www.google.com/search?q=smart+goal+framework" target="_blank">SMART Goal Framework</a>).
 
 The institution will reward academic excellence, and they will do everything to convince you that it's in your best interest
 to prioritize that above everything. But the reality is, unless you are interested in pursuing masters or doctorate level research at a very reputable university

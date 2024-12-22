@@ -5,7 +5,7 @@ draft: false
 ---
 # Justifying Automated Testing
 
-There is a phenomenon called [The Curse of Knowledge](https://www.google.com/search?q=the+curse+of+knowledge).
+There is a phenomenon called <a href="https://www.google.com/search?q=the+curse+of+knowledge" target="_blank">The Curse of Knowledge</a>.
 It states that as you become more and more of an expert in a topic,
 you run a higher and higher risk of being out of touch with what it's like to learn that topic -
 which in turn, makes you less and less effective at teaching that topic.
@@ -30,7 +30,7 @@ writing tests that lead to test suites that don't actually catch bugs, or worse,
 
 #### Why write a test for something that you already know works?
 
-A few years ago, I watched the [Fireship tutorial on TDD with Jest](https://youtu.be/Jv2uxzhPFl4?si=OVVVh59W6oCYRDov&t=365),
+A few years ago, I watched the <a href="https://youtu.be/Jv2uxzhPFl4?si=OVVVh59W6oCYRDov&t=365" target="_blank">Fireship tutorial on TDD with Jest</a>,
 where he used the example of implementing a stack with Javascript.
 First, he wrote tests for the methods. Then, he implemented the functionality to make them pass. It was a great video on how to do
 TDD, but I just couldn't understand the point.
@@ -38,9 +38,7 @@ TDD, but I just couldn't understand the point.
 The problem is, it's so obvious that the software he wrote works, that it makes no sense as an example.
 It showed exactly how to do TDD, but it didn't properly justify why writing the tests is valuable.
 
-Around the same time, I was building a lot of projects in my last few years of school, and I kept seeing rhetoric like
-["Software features that can’t be demonstrated by automated tests simply don’t exist"](https://softwareengineering.stackexchange.com/questions/33869/software-features-that-cant-be-demonstrated-by-automated-tests-simply-dont-ex)
-and ["Test-driven development is a way of managing fear during programming."](https://www.oreilly.com/library/view/learning-test-driven-development/9781098106461/preface01.html)
+Around the same time, I was building a lot of projects in my last few years of school, and I kept seeing rhetoric like <a href="https://softwareengineering.stackexchange.com/questions/33869/software-features-that-cant-be-demonstrated-by-automated-tests-simply-dont-ex" target="_blank">"Software features that can’t be demonstrated by automated tests simply don’t exist"</a> and <a href="https://www.oreilly.com/library/view/learning-test-driven-development/9781098106461/preface01.html" target="_blank">"Test-driven development is a way of managing fear during programming."</a>
 
 But when I went to implement tests in my projects, my question always came back the same. Why would you write a test for something that you already know works?
 In other words, **why would you need a test if you already verified that it works by looking at the output?**
