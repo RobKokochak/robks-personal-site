@@ -9,17 +9,18 @@ I graduated in December 2023, which turned out to be a tough time to graduate as
 At the time, I felt like I had done everything you were supposed to: graduated with honors from a reputable university, had 2 internships under my belt,
 and had a successful senior project to show.
 
-But amidst the 'correction' of the software engineering job market in the wake of the COVID pandemic, which seems to still be happening as of this writing,
+But amidst the 'correction' of the software engineering job market in the wake of the COVID pandemic,
 it proved to be more difficult than I hoped to land a job.
 After my 2nd internship ended in August, I patiently waited for a job offer that never came. And as fall rolled around, I learned from
 a call to my team manager that they didn't have allocation to extend full-time offers to me nor
 most of the other interns on my team, which was a first for them in years.
 
 In total, it took me about four months to finally land a job, after hundreds of applications and only 2 interviews. I still felt like
-one of the lucky ones.
+one of the lucky ones. As the year has continued, it's remained difficult for entry-level job seekers as the market continues
+to be very tight and competitive.
 
-I've been wanting to write a post about my experience for a while, both to share what worked for me in school and how I may have
-done things differently if I could do it again. I'm getting close to a year in to my first role as a software engineer,
+I've been wanting to write a post about my experience for a while, both to share what worked for me, and how I would do things
+differently if I could do it again. I'm getting close to the one-year mark in my first role as a software engineer,
 and I've learned a lot about what is actually valuable in a software engineer candidate compared to what I thought when I graduated,
 along with some strategies that have proven to be important when looking for work in a tough job market.
 
