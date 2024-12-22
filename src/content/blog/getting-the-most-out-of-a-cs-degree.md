@@ -5,7 +5,7 @@ draft: false
 ---
 # Getting the Most Out of a Computer Science Degree
 
-I graduated with in December 2023, which turned out to be a tough time to graduate as a software engineer.
+I graduated in December 2023, which turned out to be a tough time to graduate as a software engineer.
 At the time, I felt like I had done everything you were supposed to: graduated with honors from a reputable university, had 2 internships under my belt,
 and had a successful senior project to show.
 
