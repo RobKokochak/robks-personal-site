@@ -1,12 +1,12 @@
 ---
 title: Getting the Most Out of a Computer Science Degree
-pubDate: Dec 12 2024
+pubDate: Dec 22 2024
 draft: false
 ---
 # Getting the Most Out of a Computer Science Degree
 
 I graduated in December 2023, which turned out to be a tough time to graduate as a software engineer.
-At the time, I felt like I had done everything you were supposed to: graduated with honors from a reputable university, had 2 internships under my belt,
+At the time, I felt like I had done everything you were supposed to do: graduated with honors from a reputable university, had 2 internships under my belt,
 and had a successful senior project to show.
 
 But amidst the 'correction' of the software engineering job market in the wake of the COVID pandemic,
@@ -15,8 +15,8 @@ After my 2nd internship ended in August, I patiently waited for a job offer that
 a call to my team manager that they didn't have allocation to extend full-time offers to me nor
 most of the other interns on my team, which was a first for them in years.
 
-In total, it took me about four months to finally land a job, after hundreds of applications and only 2 interviews. I still felt like
-one of the lucky ones. As the year has continued, it's remained difficult for entry-level job seekers as the market continues
+In total, it took me about four months to finally land a job, after over a hundred applications and only 2 interviews. I still felt like
+one of the lucky ones. A year on, it's remained difficult for entry-level job seekers as the market continues
 to be very tight and competitive.
 
 I've been wanting to write a post about my experience for a while, both to share what worked for me, and how I would do things
@@ -24,7 +24,8 @@ differently if I could do it again. I'm getting close to the one-year mark in my
 and I've learned a lot about what is actually valuable in a software engineer candidate compared to what I thought when I graduated,
 along with some strategies that have proven to be important when looking for work in a tough job market.
 
-So if you're thinking about starting a CS degree, or are already working through one, I hope this post helps you prioritize what's truly important to focus on while you're in school, and helps you in forming a strategy to achieve your goals.
+So if you're thinking about starting a CS degree, or are already working through one, I hope this helps you prioritize what's
+truly important to focus on while you're in school, and helps you in forming a strategy to achieve your goals.
 
 #### Prioritization is Key
 
@@ -71,7 +72,7 @@ There is a concept called multiplicative value, and essentially states that some
 a positive feedback loop into other value creating sources.
 One good example is having a polished and refined
 resume. By making your resume bulletproof, you increase your chances of landing a job by a certain percentage for each job you apply to. Another is
-having a strong, healthy network - by making friends with other engineers, you open up pathways to employment in the future as everyone's networks grow.
+having a strong, healthy network - by making friends with other engineers, you open up pathways to employment in the future as everyone's network grows.
 
 As a college student, you must budget your time carefully. This means prioritizing the things that are most relevant to you and your goals,
 and accepting that you won't be able to excel in everything that's expected of you.
@@ -100,7 +101,7 @@ In very difficult courses, get used to finding the threshold of the minimum amou
 tutoring, etc. **Focus your efforts on the first exam.** It's usually the easiest, and gives you breathing room for the rest of the class.
 Don't pay attention to pressure from professors - it's ok to just get by with a passing grade.
 
-Remember that while your focus should be real-world experience, a CS curriculum is additive. Neglecting your fundamentals will lead to a snowball effect as you progress.
+All this being said - remember that a CS curriculum is additive. Neglecting your fundamentals will lead to a snowball effect as you progress.
 It doesn't matter what kind of software engineering you end up doing, the topics of programming paradigms, math, logic, and DS&A will form
 the foundation of your skill-set as an engineer.
 Remember that the greatest multiplicative-value act you can do is **finish the degree.** Take ownership of this, and make sure you are on track.
@@ -111,7 +112,7 @@ extra time/space that semester to really dive in. If it's a difficult technical 
 #### Principle 3: Remember the true value of a CS degree: mental agility.
 ---
 
-A CS degree provides you with breadth of knowledge - you will study a little bit of every part of the discipline.
+A CS degree provides you with breadth of knowledge. You will study a little bit of every part of the discipline.
 While this is certainly valuable, it comes at the cost of depth, which can be frustrating if you really value knowing things deeply.
 
 But the actual value of a CS degree doesn't come from this breadth of knowledge.
@@ -180,15 +181,19 @@ behind you invested in your success.
 
 #### Conclusion
 ---
-If I could go back and do it again, I would have focused much more of my efforts on getting into the best school I could, starting to build my portfolio and seek real-world experience as soon as possible, finding the best engineers around me, and nurturing my network, instead of focusing so much on academic performance.
+If I could go back and do it again, I would have focused much more of my efforts on
+starting to build my portfolio and seek real-world experience as soon as possible,
+finding the best engineers around me, and nurturing my network, instead of focusing so much on academic performance.
 
-In many cases, success is the result of luck. When I got my internship, it was because 
-I connected with the interviewer over our mutual love of music. And the reason why
-I got my job offer was because I had a personal recommendation from a teammate in my senior design group, 
+In many cases, success is the result of luck. When I got my internship, it was because
+I connected with the hiring manager over our past experience studying jazz. And the reason why
+I got my job offer was because I had a personal recommendation from a teammate in my senior design group,
 who had been working there as an intern for over a year.
 
-But remember that while luck is chance, it's also proportional to both how often you show up and the size/quality of your network. That's why it's so important to spend the time in CS school meeting and working with as many people as you can.
-People who are very successful may seem to be experts in 'making their own luck', but they would probably describe it as trying, and failing, a whole lot more than the average person.
+But remember that while luck is chance, it's also proportional to both how often you show up and the size/quality of your network.
+That's why it's so important to spend the time in CS school meeting and working with as many people as you can.
+People who are very successful may seem to be experts in 'making their own luck', but they would probably describe it as trying,
+and failing, a whole lot more than the average person.
 
 #### Burnout: A Quick Reminder
 
