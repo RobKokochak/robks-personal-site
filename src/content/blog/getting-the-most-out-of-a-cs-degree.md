@@ -9,7 +9,7 @@ I graduated in December 2023, which turned out to be a tough time to graduate as
 At the time, I felt like I had done everything you were supposed to do: graduated with honors from a reputable university, had 2 internships under my belt,
 and had a successful senior project to show.
 
-But amidst the shift in the economy and the software engineering job market in the wake of the COVID pandemic,
+But amidst the shift in the software engineering job market in the wake of the COVID pandemic,
 it proved to be more difficult than I hoped to land a job.
 After my 2nd internship ended in August, I patiently waited for a job offer that never came. And as fall rolled around, I learned from
 a call to my team manager that they didn't have allocation to extend full-time offers to me nor
@@ -192,6 +192,7 @@ who had been working there as an intern for over a year.
 
 But remember that while luck is chance, it's also proportional to both how often you show up and the size/quality of your network.
 That's why it's so important to spend the time in CS school meeting and working with as many people as you can.
+
 People who are very successful may seem to be experts in 'making their own luck', but they would probably describe it as trying,
 and failing, a whole lot more than the average person.
 
