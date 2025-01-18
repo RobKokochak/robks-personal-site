@@ -16,6 +16,7 @@ const posts = (await getCollection("blog"))
         <h2 class="title">{post.data.title}</h2>
       </a>
       <span class="subtitle">
+        {post.data.tag && <span class="post-tag">{post.data.tag}</span>}
         <FormattedDate date={post.data.pubDate} />
       </span>
     </div>

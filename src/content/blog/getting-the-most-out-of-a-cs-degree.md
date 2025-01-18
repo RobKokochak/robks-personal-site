@@ -1,6 +1,7 @@
 ---
 title: Getting the Most Out of a Computer Science Degree
 pubDate: Dec 22 2024
+tag: Engineering
 draft: false
 ---
 # Getting the Most Out of a Computer Science Degree

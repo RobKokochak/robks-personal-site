@@ -1,6 +1,7 @@
 ---
 title: Justifying Automated Testing
 pubDate: Oct 27 2024
+tag: Engineering
 draft: false
 ---
 # Justifying Automated Testing
