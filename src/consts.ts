@@ -1,2 +1,2 @@
 export const SITE_TITLE = "Rob Kokochak";
-export const SITE_DESCRIPTION = "Your Description Goes Here.";
+export const SITE_DESCRIPTION = "Personal website for Rob Kokochak.";
