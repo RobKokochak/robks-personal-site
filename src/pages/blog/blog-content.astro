@@ -2,10 +2,25 @@
 import { getCollection } from "astro:content";
 import FormattedDate from "../../components/FormattedDate.astro";
 import "../../styles/global.css";
+import type { CollectionEntry } from "astro:content";
 
 const posts = (await getCollection("blog"))
   .filter((p) => !p.data.draft)
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const getPostTagColor = (post: CollectionEntry<"blog">) => {
+  let classString = "post-tag";
+  switch (post.data.tag) {
+    case "Engineering":
+      classString += " engineering";
+      break;
+    case "Music":
+      classString += " music";
+      break;
+  }
+
+  return classString;
+};
 ---
 
 <h2>Blog</h2>
@@ -16,7 +31,9 @@ const posts = (await getCollection("blog"))
         <h2 class="title">{post.data.title}</h2>
       </a>
       <span class="subtitle">
-        {post.data.tag && <span class="post-tag">{post.data.tag}</span>}
+        {post.data.tag && (
+          <span class={getPostTagColor(post)}>{post.data.tag}</span>
+        )}
         <FormattedDate date={post.data.pubDate} />
       </span>
     </div>
