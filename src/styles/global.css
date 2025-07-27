@@ -90,14 +90,14 @@ small {
 
 a {
   color: var(--black-mid);
-  text-decoration-color: var(--grey-light);
+  text-decoration-color: var(--grey-mid);
   font-weight: 500;
   text-decoration: underline;
 }
 
 a:hover {
-  color: var(--accent);
-  text-decoration-color: var(--accent);
+  color: var(--grey-mid);
+  text-decoration-color: var(--grey-mid);
 }
 
 ul,
@@ -142,7 +142,7 @@ kbd {
 }
 
 mark {
-  background: var(--accent-faint);
+  background: var(--yellow-pastel);
 }
 
 audio {
@@ -249,7 +249,7 @@ select[multiple] {
 input:focus,
 select:focus,
 textarea:focus {
-  border: 1px solid var(--accent);
+  border: 1px solid var(--grey-mid);
 }
 
 button:disabled,
@@ -282,7 +282,7 @@ input[type="submit"] {
   border: none;
   outline: none;
   border-radius: 55px;
-  background: var(--accent);
+  background: var(--grey-mid);
   color: var(--white);
   font-family: inherit;
   font-size: inherit;
@@ -303,7 +303,7 @@ button:focus,
 input[type="button"]:focus,
 input[type="reset"]:focus,
 input[type="submit"]:focus {
-  border: 1px solid var(--accent);
+  border: 1px solid var(--grey-mid);
   box-shadow: none;
 }
 
