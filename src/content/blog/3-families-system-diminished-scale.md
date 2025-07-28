@@ -62,7 +62,7 @@ Here is a short list of permutations as a baseline for practicing this concept:
 
 What this is training your mind to do is to think about any given triad as part of a family of triads within a given diminished scale. When I 'think' C major triad, I immediately 'think' Eb, Gb, and A triads as well. This creates the potential for very interesting patterns in improvisation and composition.
 
-Here's a specific example: when I see a G13b9 chord on a lead sheet (a specific dominant-diminished sound in jazz harmony), I want to immediately 'think' E, Db, Bb, G major triads. In other words, my mind immediately thinks *Family 2*. I don't want to necessarily have a pre-planned pattern in mind, my goal is to be able to freely flow between each triad freely for that given sound. Practicing the scale like this enables that freedom.
+Here's a specific example: when I see a G13b9 chord on a lead sheet (a specific dominant-diminished sound in jazz harmony), I want to immediately 'think' E, Db, Bb, G major triads. In other words, my mind immediately thinks *Family 2*. I don't want to necessarily have a pre-planned pattern in mind, my goal is to be able to freely flow between each triad. Practicing the scale like this enables that freedom.
 
 ### Endless Patterns
 Within the diminished scale, there's repeating patterns of fourths, fifths, minor/major thirds, triads, and any combination of the aforementioned you can think of. The minor pentatonic scale is even present wihin the scale. Combining these with time-based vectors or odd note-groupings makes for an endless list of practice and composition ideas.
